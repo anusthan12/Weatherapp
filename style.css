@@ -1,0 +1,127 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: #fabcbc;
+    
+    
+    /*background-image: url('https://source.unsplash.com/1600x900/?india');*/
+    font-size: 120%;
+  }
+  
+  .card {
+    background: #fbfbfb;
+    
+    color: #000000d0;
+    padding: 2em;
+    border-radius: 18px;
+    width: 100%;
+    max-width: 420px;
+    margin: 1em;
+  }
+  
+  .search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto!important;
+  }
+  
+  button {
+    margin: 0.5em;
+    border-radius: 50%;
+    border: none;
+    height: 44px;
+    width: 44px;
+    outline: none;
+    /* background: #f2f2f2ff; */
+    background: linear-gradient(90deg, #ccf9ff, #7ce8ff, #55d0ff, #00acdf);
+    /* color: #000000d0; */
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+  
+  input.search-bar {
+    border: none;
+    outline: none;
+    padding: 0.4em 1em;
+    border-radius: 24px;
+    background: #f2f2f2ff;
+    color: #000000d0;
+    font-family: inherit;
+    font-size: 105%;
+    width: calc(100% - 100px);
+  }
+
+  
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+   background: linear-gradient(90deg, #EC37D0, #D92B2B, #FFAA0D, #EC37D0);
+   
+   
+  background-size: 400%;
+  border-radius: 50px;
+  opacity: 0;
+  transition: .5s;
+}
+button:hover {
+  animation: animate 10s linear infinite;
+}
+button:hover::before {
+  filter: blur(25px);
+  opacity: .8;
+  animation: animate 10s linear infinite;
+}
+@keyframes animate {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+
+/*   
+  button:hover {
+    background: #7c7c7c6b;
+  } */
+  
+  h1.temp {
+    margin: 0;
+    margin-bottom: 0.4em;
+  }
+  
+  .flex {
+    display: flex;
+    align-items: center;
+  }
+  
+  .description {
+    text-transform: capitalize;
+    margin-left: 8px;
+  }
+  
+  .weather.loading {
+    visibility: hidden;
+    max-height: 20px;
+    position: relative;
+  }
+  
+  .weather.loading:after {
+    visibility: visible;
+    content: "Loading...";
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 19px;
+  }
